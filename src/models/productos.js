@@ -1,15 +1,15 @@
 const mongoose = require("mongoose");
 const productosModel = mongoose.Schema({
+    img: {
+        type: String,
+        required: true
+    },
     nombre: {
         type: String,
         required: true
     },
-    edad: {
+    precio: {
         type: Number,
-        required: true
-    },
-    correo: {
-        type: String,
         required: true
     }
 });

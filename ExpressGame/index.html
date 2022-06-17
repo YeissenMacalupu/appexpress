@@ -27,8 +27,29 @@
         </ul>
     </header>
 
-    <section>
-
+    <section><br>
+        <div class="colum-tablas">
+            <div class="container">
+                <form method="post" id="formulario">
+                    <h4>Crear Producto</h4>
+                    <p>img:</p>
+                    <input type="text" id="img" name="img" class="fiel">
+                    <p>nombre:</p>
+                    <input type="text" id="nombre" name="nombre" class="fiel">
+                    <p>precio:</p>
+                    <input type="text" id="precio" name="precio" class="fiel"> <br> <br>
+                    <input type="submit" class="bottom" value="Crear Producto">
+                </form>
+                <div class="container-1">
+                    <form action="">
+                        <h4>Eliminar Pructo</h4>
+                        <p>id:</p>
+                        <input type="text" class="fiel"> <br> <br>
+                        <input type="submit" class="bottom" value="Eliminar Pructo">
+                    </form>
+                </div>
+            </div>
+        </div>
         <div class="contenedor-columnas">
             <div class="columna">
                 <a href="#"><img src="../ExpressGame/img/momento-1.jpg" alt=""></a>
@@ -171,35 +192,31 @@
             </div>
         </div> <br>
     </footer>
+    <script>
+        $(document).ready(function() {
+            $.ajax({
+                type: "GET",
+                url: "http://localhost:3000/api/productos/",
+                dataType: "json",
+                success: function(data) {
+                    $.each(data, function(i, item) {
+                        console.log(item.nombre);
+                        var file =
+                            ` <div class="columna item">
+                             <a href="#"><img class="item-image image"src="${item.image}" alt=""></a>
+                            <div class="informacion">
+                            <div class="item-name name">${item.nombre}</div>
+                            <div class="s">S/</div>
+                            <div class="item-precio precio" class="shoppingCartItemPrice">${item.precio}</div>
+                            </div>
+                            </div>`;
 
-
-    <div class="container">
-        <form method="post" id="formulario">
-            <label for="img">img</label><br>
-            <input type="text" id="img" name="img"><br><br>
-            <label for="nombre">nombre</label><br>
-            <input type="text" id="nombre" name="nombre"><br><br>
-            <label for="precio">precio</label><br>
-            <input type="text" id="precio" name="precio"><br><br>
-            <input type="submit" value="Submit">
-        </form>
-
-        <br>
-        <br>
-
-        <table id="tabla" border="1">
-            <thead>
-                <tr>
-                    <td>img</td>
-                    <td>nombre</td>
-                    <td>precio</td>
-                </tr>
-            </thead>
-            <tbody>
-
-            </tbody>
-        </table>
-    </div>
+                        $(".contenedor-columnas").append(file)
+                    })
+                }
+            })
+        });
+    </script>
     <script>
         $(document).ready(function() {
             $.ajax({
@@ -217,7 +234,9 @@
                         $("#tabla>tbody").append(fila)
                     });
                 }
+
             });
+
         });
 
         $("#formulario").on('submit', function(e) {

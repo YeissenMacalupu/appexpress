@@ -190,3 +190,53 @@ li {
 .name-redes {
     margin: 15px 0px 0px 10px;
 }
+
+
+/*Tablas */
+
+.colum-tablas div {
+    display: flex;
+    padding: 15px;
+    flex-wrap: wrap;
+    width: 45%;
+    margin: auto;
+}
+
+body {
+    background-color: black;
+}
+
+.container {
+    margin: auto;
+    border-radius: 4px;
+}
+
+.container-1 h4 {
+    font-size: 20px;
+    color: white;
+}
+
+.fiel {
+    background-color: rgb(212, 212, 228);
+    padding: 5px;
+    border-radius: 4px;
+    border: 1px solid #1f53c5;
+}
+
+.colum-tablas p {
+    color: white;
+    font-size: 17px;
+}
+
+.container h4 {
+    font-size: 20px;
+    color: white;
+}
+
+.bottom {
+    background: rgb(19, 82, 0);
+    color: white;
+    border: none;
+    padding: 8px;
+    font-size: 14px;
+}

@@ -86,7 +86,7 @@ router.get("/productos", (req, res) => {
  * @swagger
  * /api/productos/{id}:
  *  get:
- *    summary: Listar todos los productos
+ *    summary: Listar productos por id
  *    tags: [Productos]
  *    parameters:
  *      - in: path
